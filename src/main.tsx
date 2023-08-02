@@ -1,9 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
+import '@/styles/index.scss';
+import { createTheme, ThemeProvider } from '@mui/material';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from '@/app.tsx';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const theme = createTheme({
+  typography: {
+    fontFamily: `"Poppins", "Helvetica", "Arial", sans-serif`,
+  },
+});
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div>hello world</div>
-  </React.StrictMode>,
+    <ThemeProvider theme={theme}>
+      <App />
+      <div>hello would</div>
+    </ThemeProvider>
+  </React.StrictMode>
 );
